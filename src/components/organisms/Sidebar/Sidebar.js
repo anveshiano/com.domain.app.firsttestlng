@@ -22,9 +22,19 @@ export default class Sidebar extends Lightning.Component {
   _init() {
     const fullHeight = this.stage.h;
     this.patch({ h: fullHeight });
+    this._setState("Menu");
   }
 
   _getFocused() {
     console.log("Sidebar focused ");
+  }
+  static _states() {
+    return [
+      class Menu extends this {
+        _getFocused() {
+          return this.tag("Menu");
+        }
+      },
+    ];
   }
 }
