@@ -1,0 +1,6 @@
+{
+  "name": "first-test-lng",
+  "identifier": "com.domain.app.firsttestlng",
+  "version": "1.0.0",
+  "icon": "./static/icon.png"
+}
