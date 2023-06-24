@@ -1,4 +1,5 @@
 import { Lightning, Utils } from "@lightningjs/sdk";
+import Sidebar from "./components/organisms/Sidebar/Sidebar";
 
 export default class App extends Lightning.Component {
   static getFonts() {
@@ -12,16 +13,18 @@ export default class App extends Lightning.Component {
       Background: {
         w: 1920,
         h: 1080,
-        color: 0xfffbb03b,
+        // color: 0xfffbb03b,
         src: Utils.asset("images/background.png"),
       },
-      Logo: {
-        mountX: 0.5,
-        mountY: 1,
-        x: 960,
-        y: 600,
-        src: Utils.asset("images/logo.png"),
-      },
+      // Logo: {
+      //   mountX: 0.5,
+      //   mountY: 1,
+      //   x: 960,
+      //   y: 600,
+      //   src: Utils.asset("images/logo.png"),
+      // },
+
+      Sidebar: { type: Sidebar },
       Text: {
         mount: 0.5,
         x: 960,
@@ -37,22 +40,22 @@ export default class App extends Lightning.Component {
   }
 
   _init() {
-    this.tag("Background")
-      .animation({
-        duration: 15,
-        repeat: -1,
-        actions: [
-          {
-            t: "",
-            p: "color",
-            v: {
-              0: { v: 0xfffbb03b },
-              0.5: { v: 0xfff46730 },
-              0.8: { v: 0xfffbb03b },
-            },
-          },
-        ],
-      })
-      .start();
+    // this.tag("Background")
+    //   .animation({
+    //     duration: 15,
+    //     repeat: -1,
+    //     actions: [
+    //       {
+    //         t: "",
+    //         p: "color",
+    //         v: {
+    //           0: { v: 0xfffbb03b },
+    //           0.5: { v: 0xfff46730 },
+    //           0.8: { v: 0xfffbb03b },
+    //         },
+    //       },
+    //     ],
+    //   })
+    //   .start();
   }
 }
