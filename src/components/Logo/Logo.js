@@ -4,7 +4,7 @@ export default class Logo extends Lightning.Component {
   static _template() {
     return {
       h: 140,
-      w: 300,
+      w: 340,
       x: 0,
       rect: true,
       color: 0x00000000,

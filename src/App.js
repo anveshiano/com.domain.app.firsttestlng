@@ -1,53 +1,44 @@
-import { Lightning, Utils } from "@lightningjs/sdk";
+import { Utils, Router } from "@lightningjs/sdk";
 import Sidebar from "./components/organisms/Sidebar/Sidebar";
+import routes from "./lib/routes";
+import MenuWidget from "./widgets/MenuWidget";
 
-export default class App extends Lightning.Component {
+export const initFactory = (stageInstance) => {
+  this.stage = stageInstance;
+};
+export default class App extends Router.App {
+  _setup() {
+    // initFactory(this.stage);
+    Router.startRouter(routes, this);
+  }
   static getFonts() {
     return [
-      { family: "Regular", url: Utils.asset("fonts/Roboto-Regular.ttf") },
+      { family: "Regular", url: Utils.asset("fonts/Inter-Regular.ttf") },
+      { family: "SemiBold", url: Utils.asset("fonts/Inter-SemiBold.ttf") },
+      {
+        family: "ExtraBold",
+        url: Utils.asset("fonts/Inter-ExtraBold.ttf"),
+      },
+      {
+        family: "Black",
+        url: Utils.asset("fonts/Inter-Black.ttf"),
+      },
     ];
   }
 
   static _template() {
     return {
-      Background: {
-        w: 1920,
-        h: 1080,
-        src: Utils.asset("images/background.png"),
-      },
-      Sidebar: { type: Sidebar },
-      Text: {
-        mount: 0.5,
-        x: 960,
-        y: 720,
-        text: {
-          text: "trrrr",
-          fontFace: "Regular",
-          fontSize: 64,
-          textColor: 0xbbffffff,
+      Widgets: {
+        MenuWidget: {
+          type: MenuWidget,
         },
       },
     };
   }
 
+  _handleDown() {}
+
   _init() {
-    this._setState("Sidebar");
-  }
-  static _states() {
-    return [
-      class Sidebar extends this {
-        _getFocused() {
-          return this.tag("Sidebar");
-        }
-        _handleLeft() {
-          console.log("App handleLeft");
-          //   this._setState("Sidebar");
-        }
-        _handleRight() {
-          console.log("App handleRight");
-          // this._setState(this.state);
-        }
-      },
-    ];
+    Router.focusWidget("MenuWidget");
   }
 }

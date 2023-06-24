@@ -8,11 +8,13 @@
         "fontSize": 12
       }
     },
-    "debug": false
+    "debug": false,
+    "autoPageFocusRestore": true
   },
   "platformSettings": {
     "path": "./static",
     "log": true,
-    "showFps": true
+    "showFps": true,
+    "inspector": true
   }
 }
