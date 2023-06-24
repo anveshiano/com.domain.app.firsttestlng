@@ -1,5 +1,6 @@
 import { Lightning, Colors } from "@lightningjs/sdk";
 import MenuItem from "../../Atoms/MenuItem/MenuItem";
+import { navItems } from "./data";
 
 export default class Menu extends Lightning.Component {
   static _template() {
@@ -10,22 +11,33 @@ export default class Menu extends Lightning.Component {
       y: 0,
       rect: true,
       color: 0xffb6c444,
-      MenuItem1: {
-        y: 200,
-        type: MenuItem,
-        label: { text: "Search" },
-      },
-      MenuItem2: {
-        y: 252,
-        type: MenuItem,
-        label: { text: "Movies" },
-      },
-      MenuItem3: {
-        y: 304,
-        type: MenuItem,
-        label: { text: "News Feed" },
-      },
     };
   }
-  _init() {}
+  _init() {
+    this.index = 0;
+    this.dataLength = navItems.length;
+    const buttons = [];
+    navItems.map((item, index) => {
+      buttons.push({ type: MenuItem, y: index * 100, label: item });
+    });
+    this.children = buttons;
+  }
+
+  _handleUp() {
+    console.log("handleUp");
+    if (this.index !== 0) {
+      this.index -= 1;
+    }
+  }
+
+  _handleDown() {
+    if (this.index !== this.dataLength - 1) {
+      this.index += 1;
+    }
+  }
+
+  _getFocused() {
+    console.log("focused element's index:", this.index);
+    return this.children[this.index];
+  }
 }

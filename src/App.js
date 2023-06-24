@@ -1,5 +1,6 @@
 import { Lightning, Utils } from "@lightningjs/sdk";
-import Sidebar from "./components/organisms/Sidebar/Sidebar";
+// import Sidebar from "./components/organisms/Sidebar/Sidebar";
+import Menu from "./components/molecules/Menu/Menu";
 
 export default class App extends Lightning.Component {
   static getFonts() {
@@ -24,7 +25,7 @@ export default class App extends Lightning.Component {
       //   src: Utils.asset("images/logo.png"),
       // },
 
-      Sidebar: { type: Sidebar },
+      Menu: { type: Menu },
       Text: {
         mount: 0.5,
         x: 960,
@@ -40,22 +41,26 @@ export default class App extends Lightning.Component {
   }
 
   _init() {
-    // this.tag("Background")
-    //   .animation({
-    //     duration: 15,
-    //     repeat: -1,
-    //     actions: [
-    //       {
-    //         t: "",
-    //         p: "color",
-    //         v: {
-    //           0: { v: 0xfffbb03b },
-    //           0.5: { v: 0xfff46730 },
-    //           0.8: { v: 0xfffbb03b },
-    //         },
-    //       },
-    //     ],
-    //   })
-    //   .start();
+    this._setState("Menu");
   }
+  static _states() {
+    return [
+      class Menu extends this {
+        _getFocused() {
+          return this.tag("Menu");
+        }
+        _handleLeft() {
+          console.log("App handleLeft");
+          this._setState("Menu");
+        }
+        _handleRight() {
+          console.log("App handleRight");
+          this._setState(this.state);
+        }
+      },
+    ];
+  }
+  // _getFocused() {
+  //   console.log("App focused ");
+  // }
 }

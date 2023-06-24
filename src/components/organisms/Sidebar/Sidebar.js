@@ -23,4 +23,8 @@ export default class Sidebar extends Lightning.Component {
     const fullHeight = this.stage.h;
     this.patch({ h: fullHeight });
   }
+
+  _getFocused() {
+    console.log("Sidebar focused ");
+  }
 }
