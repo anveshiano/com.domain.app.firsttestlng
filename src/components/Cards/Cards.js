@@ -40,9 +40,7 @@ export default class Cards extends Lightning.Component {
   _focus() {
     this.index = 0;
   }
-  _unfocus() {
-    // this.x = 400;
-  }
+  _unfocus() {}
 
   repositionCards() {
     if (this.index >= 0) {

@@ -25,7 +25,6 @@ export default class Card extends Lightning.Component {
         x: 0,
         y: 500,
         rect: true,
-        // color: 0xff228435,
         alpha: 0,
         Year: {
           x: 22,
@@ -42,7 +41,7 @@ export default class Card extends Lightning.Component {
           h: 30,
           w: 60,
           rect: true,
-          color: 0xffb9b9b9, // for som reason this color is not getting applied
+          color: 0xffb9b9b9,
           text: {
             text: "Rating",
             textColor: 0xff000000,

@@ -7,7 +7,6 @@ export const initFactory = (stageInstance) => {
 };
 export default class App extends Router.App {
   _setup() {
-    // initFactory(this.stage);
     Router.startRouter(routes, this);
   }
   static getFonts() {

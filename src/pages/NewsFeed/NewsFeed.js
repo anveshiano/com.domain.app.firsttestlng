@@ -6,7 +6,7 @@ export default class NewsFeed extends Lightning.Component {
       rect: true,
       w: 1920,
       h: 1080,
-      color: 0xff30be96,
+      color: 0xff0e1117,
       Header: {
         mount: 0.5,
         x: 960,

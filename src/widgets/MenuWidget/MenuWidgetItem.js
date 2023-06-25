@@ -16,7 +16,7 @@ export default class MenuWidgetItem extends Lightning.Component {
         mountY: 0.5,
         text: {
           text: "MenuItem",
-          fontSize: 36,
+          fontSize: 30,
           textColor: 0xffffffff,
           fontFace: "SemiBold",
         },
@@ -41,8 +41,8 @@ export default class MenuWidgetItem extends Lightning.Component {
       smooth: {},
       Label: {
         smooth: {
-          scale: 1.5,
-          x: 100,
+          scale: 1.7,
+          x: 140,
         },
       },
     });
