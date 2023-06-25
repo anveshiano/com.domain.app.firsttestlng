@@ -8,7 +8,7 @@ export default class Cards extends Lightning.Component {
       Wrapper: {
         rect: true,
         w: 1400,
-        h: 600,
+        h: 574,
         x: 350,
         y: 200,
         color: "transparent",
@@ -27,9 +27,11 @@ export default class Cards extends Lightning.Component {
     mockMoviesData.map((item, index) => {
       items.push({
         type: Card,
+        x: (index + 1) * 360,
         title: item.title,
         src: item.poster_path,
-        x: (index + 1) * 360,
+        year: item.release_date.slice(0, 4),
+        rating: item.vote_average.toString(),
       });
     });
     this.tag("Cards").children = items;
