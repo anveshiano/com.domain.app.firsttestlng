@@ -18,8 +18,6 @@ export default class Card extends Lightning.Component {
         y: 0,
         rect: true,
         color: 0xffeacf06,
-        // src: this.src,
-        texture: Img(Utils.asset("images/logo.png")).cover(350, 500),
       },
       Info: {
         h: 74,
