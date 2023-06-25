@@ -10,7 +10,7 @@ export default class Card extends Lightning.Component {
       mountY: 0.5,
       mountX: 0.7,
       rect: true,
-      color: 0xfff7f7f7,
+      color: "transparent",
       Image: {
         h: 500,
         w: (w) => w,
@@ -28,6 +28,7 @@ export default class Card extends Lightning.Component {
         y: 500,
         rect: true,
         // color: 0xff228435,
+        alpha: 0,
         Year: {
           x: 22,
           y: 20,
@@ -38,7 +39,7 @@ export default class Card extends Lightning.Component {
           },
         },
         Rating: {
-          x: 260,
+          x: 290,
           y: 20,
           h: 30,
           w: 60,
@@ -47,8 +48,8 @@ export default class Card extends Lightning.Component {
           text: {
             text: "Rating",
             textColor: 0xff000000,
-            fontFace: "Regular",
-            fontSize: 26,
+            fontFace: "ExtraBold",
+            fontSize: 24,
             color: 0xffb9b9b9,
           },
         },
@@ -72,12 +73,13 @@ export default class Card extends Lightning.Component {
   _init() {}
 
   _focus() {
-    console.log("focus Card");
     this.patch({ smooth: { scale: 1.5 }, zIndex: 99 });
+    this.tag("Info").patch({ smooth: { alpha: 1 } });
   }
 
   _unfocus() {
     this.patch({ smooth: { scale: 1 }, zIndex: 10 });
+    this.tag("Info").patch({ smooth: { alpha: 0 } });
   }
 
   _getFocused() {

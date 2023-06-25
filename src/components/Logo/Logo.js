@@ -21,8 +21,6 @@ export default class Logo extends Lightning.Component {
     };
   }
   _init() {
-    console.log("this.stage.h", this.stage.h);
-    console.log("window outer width", this.stage.w);
     this.patch({ y: this.stage.h - 200 });
   }
 }

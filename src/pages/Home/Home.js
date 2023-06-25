@@ -19,11 +19,4 @@ export default class Home extends Lightning.Component {
       },
     };
   }
-  _handleUp() {}
-  _init() {
-    console.log("Home rendered");
-  }
-  _focus() {
-    console.log("focus Home page");
-  }
 }

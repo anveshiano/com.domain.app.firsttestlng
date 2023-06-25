@@ -51,23 +51,12 @@ export default class MenuWidget extends Lightning.Component {
   }
 
   _getFocused() {
-    // return this.activeItem || this;
     return this.tag("Items").children[this.index] || this;
   }
   _handleRight() {
-    // console.log("==== _handleRight ");
     Router.focusPage();
   }
   _handleLeft() {
-    //  console.log("====_handleLeft ");
     Router.focusWidget("MenuWidget");
-  }
-  _handleEnter() {
-    // Router.focusPage();
-    console.log("focus Handle Enter");
-  }
-
-  _focus() {
-    console.log("focus MenuWidget");
   }
 }

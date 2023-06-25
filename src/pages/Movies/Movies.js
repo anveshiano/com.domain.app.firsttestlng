@@ -14,12 +14,6 @@ export default class Movies extends Lightning.Component {
     };
   }
 
-  _init() {}
-
-  _focus() {
-    console.log("focus Movies");
-  }
-
   _getFocused() {
     return this.tag("Cards");
   }

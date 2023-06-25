@@ -69,7 +69,6 @@ export default class Cards extends Lightning.Component {
       Router.focusWidget("MenuWidget");
     }
     this.repositionCards();
-    console.log("handleRight index", this.index);
   }
 
   _handleRight() {
@@ -77,7 +76,6 @@ export default class Cards extends Lightning.Component {
       this.index++;
     }
     this.repositionCards();
-    console.log("handleLeft index", this.index);
   }
 
   get activeItem() {
