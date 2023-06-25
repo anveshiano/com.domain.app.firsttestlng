@@ -27,6 +27,11 @@ export default class App extends Router.App {
 
   static _template() {
     return {
+      ...super._template(),
+      w: 1920,
+      h: 1080,
+      rect: true,
+      color: 0xff0e1117,
       Widgets: {
         MenuWidget: {
           type: MenuWidget,
@@ -36,6 +41,14 @@ export default class App extends Router.App {
   }
 
   _handleDown() {}
+
+  _handleLeft() {
+    Router.focusWidget("MenuWidget");
+  }
+
+  _handleRight() {
+    Router.focusPage();
+  }
 
   _init() {
     Router.focusWidget("MenuWidget");

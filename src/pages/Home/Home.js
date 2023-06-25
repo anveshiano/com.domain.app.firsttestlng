@@ -6,13 +6,13 @@ export default class Home extends Lightning.Component {
       rect: true,
       w: 1920,
       h: 1080,
-      color: 0xff30be96,
+      color: "transparent",
       Header: {
         mount: 0.5,
         x: 960,
         y: 540,
         text: {
-          text: "Home",
+          text: "Welcome",
           fontFace: "ExtraBold",
           fontSize: 128,
         },

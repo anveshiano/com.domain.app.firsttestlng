@@ -22,4 +22,7 @@ export default class NewsFeed extends Lightning.Component {
   _init() {
     console.log("NewsFeed rendered");
   }
+  _focus() {
+    console.log("focus News feed");
+  }
 }

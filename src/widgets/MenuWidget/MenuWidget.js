@@ -11,8 +11,8 @@ export default class MenuWidget extends Lightning.Component {
       x: 0,
       y: 0,
       rect: true,
-      color: 0xff0e1117,
-      Items: { y: 150 },
+      color: 0xff171a21,
+      Items: { y: 200 },
       Logo: {
         type: Logo,
       },
@@ -36,13 +36,13 @@ export default class MenuWidget extends Lightning.Component {
 
   _handleUp() {
     if (this.index !== 0) {
-      this.index -= 1;
+      this.index--;
     }
   }
 
   _handleDown() {
     if (this.index !== this.dataLength - 1) {
-      this.index += 1;
+      this.index++;
     }
   }
 

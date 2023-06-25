@@ -37,7 +37,6 @@ export default class MenuWidgetItem extends Lightning.Component {
 
   _focus() {
     Router.navigate(this.path);
-    console.log("I am coming here:", this.path);
     this.patch({
       smooth: {},
       Label: {
