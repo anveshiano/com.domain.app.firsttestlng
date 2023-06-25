@@ -1,5 +1,4 @@
 import { Utils, Router } from "@lightningjs/sdk";
-import Sidebar from "./components/organisms/Sidebar/Sidebar";
 import routes from "./lib/routes";
 import MenuWidget from "./widgets/MenuWidget";
 
