@@ -1,13 +1,26 @@
 import Home from "./Home";
+import { makeCreateComponent } from "@lightningjs/ui-components-test-utils";
 
-describe("Home", () => {
-  it("should render", () => {
-    expect(Home).toMatchSnapshot();
+const createHomeComponent = makeCreateComponent(Home);
+
+describe("Home tests", () => {
+  let home, testRenderer;
+  beforeEach(() => {
+    [home, testRenderer] = createHomeComponent();
+  });
+
+  afterEach(() => {
+    home = null;
+    testRenderer = null;
+  });
+
+  it("should render Home", () => {
+    expect(home).toMatchSnapshot();
   });
 
   it("should display text", () => {
-    const mainHome = Home._getFocused(); // TypeError: _Home.default._getFocused is not a function
-    let text = Home.tag("Header").text.text;
+    const mainHome = home._getFocused();
+    let text = home.tag("Header").text.text;
     expect(text).toEqual("Welcome");
   });
 });
